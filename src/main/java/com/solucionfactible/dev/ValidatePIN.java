@@ -9,6 +9,7 @@ package com.solucionfactible.dev;
 public class ValidatePIN {
 	
 	public static boolean isValid(String pin) {
+
             boolean resultado = false;
             if(pin.matches("[+-]?\\d*(\\.\\d+)?")){
                 int numCaracter = pin.length();

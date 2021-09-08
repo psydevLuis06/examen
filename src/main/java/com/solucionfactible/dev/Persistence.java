@@ -10,7 +10,6 @@ public class Persistence {
 	
 	public static int persistence(long num) {
             int repeticiones = 0;
-
             while(num > 9){
                 int producto = 1;
                     while(num != 0){
