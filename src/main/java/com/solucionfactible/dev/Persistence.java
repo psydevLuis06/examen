@@ -18,7 +18,8 @@ public class Persistence {
                         producto *= unidades;
                         num = (num - unidades)/10;
                     }
-                repeticiones++;                
+                repeticiones++;           
+     
                 num = producto;
             }
 

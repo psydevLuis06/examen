@@ -9,7 +9,6 @@ package com.solucionfactible.dev;
 public class ArrayDiff {
 	
 	public static int[] diff(int[] a, int[] b) {
-
 //            ArrayList<Integer> al = new ArrayList<Integer>();
 //            al = a ;
 //                for (int i=0; i<a.length; i++){
