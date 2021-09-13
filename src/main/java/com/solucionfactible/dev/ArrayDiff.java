@@ -1,5 +1,8 @@
 package com.solucionfactible.dev;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * diff subtracts one list from another and returns the result. It should remove
  * all values from list a, which are present in list b keeping their order.
@@ -10,58 +13,31 @@ public class ArrayDiff {
 
     public static int[] diff(int[] a, int[] b) {
 
-        int[] c = a;
-
+        int[] c = new int[]{};
+        
+        List<String> myListA = new ArrayList<>();
+        List<String> myListB = new ArrayList<>();
+        List<Integer> myListC = new ArrayList<>();
         for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < b.length; j++) {
-//                System.out.println("i = "+a[i]);
-//                System.out.println("j = "+b[j]);
-                if (a[i] == b[j]) {
-//                    System.out.println("valorA: " + a[i]);
-//                    System.out.println("valorB: " + b[j]);
-                    c = removeTheElement(c, i);
-
-                }
-            }
+            myListA.add(Integer.toString(a[i]));
         }
+        
+        for (int i = 0; i < b.length; i++) {
+            myListB.add(Integer.toString(b[i]));
+        }
+        
+        
+        myListA.removeIf(x -> myListB.contains(x)); 
+        
+        
+        for(String s : myListA) myListC.add(Integer.valueOf(s));
 
-        return c;
+
+        int[] primitive = myListC.stream()
+                            .mapToInt(Integer::intValue)
+                            .toArray();
+        return primitive;
     }
 
-   public static int[] removeTheElement(int[] arr,
-                                          int index)
-    {
-  
-        // If the array is empty
-        // or the index is not in array range
-        // return the original array
-        if (arr == null
-            || index < 0
-            || index >= arr.length) {
-  
-            return arr;
-        }
-  
-        // Create another array of size one less
-        int[] anotherArray = new int[arr.length - 1];
-  
-        // Copy the elements except the index
-        // from original array to the other array
-        for (int i = 0, k = 0; i < arr.length; i++) {
-  
-            // if the index is
-            // the removal element index
-            if (i == index) {
-                continue;
-            }
-  
-            // if the index is not
-            // the removal element index
-            anotherArray[k++] = arr[i];
-        }
-  
-        // return the resultant array
-        return anotherArray;
-    }
-
+   
 }
