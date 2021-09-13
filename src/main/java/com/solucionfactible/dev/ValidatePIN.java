@@ -11,7 +11,7 @@ public class ValidatePIN {
 	public static boolean isValid(String pin) {
 
             boolean resultado = false;
-            if(pin.matches("[+-]?\\d*(\\.\\d+)?")){
+            if (pin.matches("^\\d+$")) {
                 int numCaracter = pin.length();
                 if(numCaracter == 4 || numCaracter == 6){
                     resultado = true;

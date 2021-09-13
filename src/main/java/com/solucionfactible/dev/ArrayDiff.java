@@ -1,34 +1,35 @@
 package com.solucionfactible.dev;
 
 /**
- * diff subtracts one list from another and returns the result.
- * It should remove all values from list a, which are present in list b keeping their order.
- * 
+ * diff subtracts one list from another and returns the result. It should remove
+ * all values from list a, which are present in list b keeping their order.
+ *
  * @author developer
  */
 public class ArrayDiff {
-	
-	public static int[] diff(int[] a, int[] b) {
 
-//            ArrayList<Integer> al = new ArrayList<Integer>();
-//            al = a ;
-//                for (int i=0; i<a.length; i++){
-//                for (int j=0; j<b.length; j++){
-//                    if (a[i]==b[j])
-//                        //removeTheElement(a,a[i]);
-//                        al.remove(i);
-//                        //System.Out.Println(a[i]);
-//                        
-//                        break; 
-//                }                       
-//            } 
-//      
-	//	return al;
-                return a;
-	}
+    public static int[] diff(int[] a, int[] b) {
 
+        int[] c = a;
 
-public static int[] removeTheElement(int[] arr, int index)
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+//                System.out.println("i = "+a[i]);
+//                System.out.println("j = "+b[j]);
+                if (a[i] == b[j]) {
+//                    System.out.println("valorA: " + a[i]);
+//                    System.out.println("valorB: " + b[j]);
+                    c = removeTheElement(c, i);
+
+                }
+            }
+        }
+
+        return c;
+    }
+
+   public static int[] removeTheElement(int[] arr,
+                                          int index)
     {
   
         // If the array is empty
